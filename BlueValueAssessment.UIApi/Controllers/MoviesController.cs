@@ -32,7 +32,7 @@ namespace BlueValueAssessment.UIApi.Controllers
         {
             _logger.Information($"Search begins at {DateTime.UtcNow}, Movie title {searchQueryDto.Title}");
             await _validationFactory.ValidateAsync(searchQueryDto);
-            _logger.Information($"Validation Passed fro title {searchQueryDto.Title}");
+            _logger.Information($"Validation Passed for title {searchQueryDto.Title}");
 
             var response = await _moviesService.SearchMoviesAsync(new Core.Models.SearchQuery { Title = searchQueryDto.Title });
 

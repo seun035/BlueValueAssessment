@@ -18,7 +18,7 @@ namespace BlueValueAssessment.UIApi.Validations
                 }
                 catch (FormatException ex)
                 {
-                    context.AddFailure($"Invalid '{context.PropertyName}' format. Valid date format: dd-MM-YYYY ");
+                    context.AddFailure($"Invalid Date format. Valid date format: dd-MM-YYYY ");
                 }
             });
         }

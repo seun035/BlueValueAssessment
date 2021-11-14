@@ -1,4 +1,6 @@
-﻿using BlueValueAssessment.Core.Documents;
+﻿using BlueValueAssessment.Core.Configs;
+using BlueValueAssessment.Core.Documents;
+using Microsoft.Extensions.Options;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
@@ -14,10 +16,13 @@ namespace BlueValueAssessment.Data
         private const string DATABASE_NAME = "movies";
         private const string REQUEST_COLLECTION = "requests";
         private readonly IMongoDatabase _mongoDatabase;
+        private readonly string _conn;
 
-        public MongoDbContext()
+        public MongoDbContext(string conn)
         {
+            _conn = conn;
             _mongoDatabase = GetDatabase();
+           
         }
 
         public IMongoCollection<RequestDocument> Requests
@@ -30,7 +35,7 @@ namespace BlueValueAssessment.Data
 
         public IMongoDatabase GetDatabase()
         {
-            MongoClient mongoClient = new MongoClient("mongodb://localhost:27017");
+            MongoClient mongoClient = new MongoClient(_conn);
 
             BsonSerializer.RegisterSerializer(new GuidSerializer(GuidRepresentation.Standard));
             BsonDefaults.GuidRepresentationMode = GuidRepresentationMode.V3;

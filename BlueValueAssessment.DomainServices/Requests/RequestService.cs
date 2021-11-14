@@ -1,5 +1,6 @@
 ﻿using BlueValueAssessment.Core.Data;
 using BlueValueAssessment.Core.Documents;
+using BlueValueAssessment.Core.Helpers;
 using BlueValueAssessment.Core.Models;
 using BlueValueAssessment.Core.Services;
 using System;
@@ -41,7 +42,7 @@ namespace BlueValueAssessment.DomainServices.Requests
             return new BaseResponse<RequestDocument>
             {
                 Data = request,
-                Message = "success",
+                Message = ResponseMessage.OperationSuccessful,
                 StatusCode = 200
             };
         }
@@ -52,7 +53,7 @@ namespace BlueValueAssessment.DomainServices.Requests
             return new BaseResponse<IList<RequestDocument>>
             {
                 Data = requests,
-                Message = "success",
+                Message = ResponseMessage.OperationSuccessful,
                 StatusCode = 200
             };
         }
@@ -63,7 +64,7 @@ namespace BlueValueAssessment.DomainServices.Requests
             return new BaseResponse<IList<RequestDocument>>
             {
                 Data = requests,
-                Message = "success",
+                Message = ResponseMessage.OperationSuccessful,
                 StatusCode = 200
             };
         }
@@ -74,7 +75,7 @@ namespace BlueValueAssessment.DomainServices.Requests
             return new BaseResponse<long>
             {
                 Data = count,
-                Message = "success",
+                Message = ResponseMessage.OperationSuccessful,
                 StatusCode = 200
             };
         }
@@ -86,7 +87,7 @@ namespace BlueValueAssessment.DomainServices.Requests
 
             return new BaseResponse<object>
             {
-                Message = "success",
+                Message = ResponseMessage.OperationSuccessful,
                 StatusCode = 200
             };
         }

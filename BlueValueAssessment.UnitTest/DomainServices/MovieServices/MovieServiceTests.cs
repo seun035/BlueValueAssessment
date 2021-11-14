@@ -1,4 +1,5 @@
 ﻿using BlueValueAssessment.Core.Configs;
+using BlueValueAssessment.Core.Helpers;
 using BlueValueAssessment.Core.Models;
 using BlueValueAssessment.Core.Services;
 using BlueValueAssessment.DomainServices.Movies;
@@ -55,7 +56,7 @@ namespace BlueValueAssessment.UnitTest.DomainServices.MovieServices
 
             Assert.True(response.StatusCode == 200);
             Assert.True(response.Data != null);
-            Assert.True(response.Message == "Success");
+            Assert.True(response.Message == ResponseMessage.OperationSuccessful);
         }
 
         [Fact]
@@ -96,7 +97,7 @@ namespace BlueValueAssessment.UnitTest.DomainServices.MovieServices
 
             Assert.True(response.StatusCode == 400);
             Assert.True(response.Data == null);
-            Assert.True(response.Message == "Fail");
+            Assert.True(response.Message == ResponseMessage.OperationFailed);
         }
     }
 

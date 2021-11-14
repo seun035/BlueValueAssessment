@@ -1,4 +1,5 @@
 ﻿using BlueValueAssessment.Core.Configs;
+using BlueValueAssessment.Core.Helpers;
 using BlueValueAssessment.Core.Models;
 using BlueValueAssessment.Core.Services;
 using Microsoft.Extensions.Options;
@@ -56,14 +57,14 @@ namespace BlueValueAssessment.DomainServices.Movies
                     var result = JsonConvert.DeserializeObject<SearchResult>(respAsString);
                     response.Data = result;
                     response.StatusCode = 200;
-                    response.Message = "Success";
+                    response.Message = ResponseMessage.OperationSuccessful;
 
                     request.ImdbID = result.ImdbID;
                 }
                 else
                 {
                     response.StatusCode = (int)httpResponse.StatusCode;
-                    response.Message = "Fail";
+                    response.Message = ResponseMessage.OperationFailed;
                 }
                 
             }

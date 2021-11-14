@@ -19,7 +19,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlueValueAssessment.UIApi",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04-Test", "04-Test", "{C5EED476-66A6-4821-BB7B-C8E7FBC5955E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueValueAssessment.UnitTest", "BlueValueAssessment.UnitTest\BlueValueAssessment.UnitTest.csproj", "{0686CF8D-BB36-4B3D-B3A4-7ADE92DC983D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlueValueAssessment.UnitTest", "BlueValueAssessment.UnitTest\BlueValueAssessment.UnitTest.csproj", "{0686CF8D-BB36-4B3D-B3A4-7ADE92DC983D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6EB39EBD-AD28-4F77-9DB3-0A73E30D1189}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
